@@ -1,0 +1,90 @@
+:where([class^="ri-"])::before { 
+    content: "\f3c2"; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #c8a6ff 0%, #a2c5ff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    cursor: pointer;
+}
+
+/* Title hover effect */
+.fixed .glassmorphism {
+    opacity: 1;
+    transform: none;
+}
+
+.fixed .glassmorphism:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Button hover effect */
+button.glassmorphism {
+    opacity: 1;
+    transform: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+button.glassmorphism:hover {
+    transform: scale(1.1) translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Message cards hover effect */
+.container .glassmorphism {
+    position: relative;
+    overflow: hidden;
+}
+
+.container .glassmorphism::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.container .glassmorphism:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.container .glassmorphism:hover::before {
+    opacity: 1;
+}
+
+.container .glassmorphism p {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.container .glassmorphism:hover p {
+    transform: scale(1.05);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} 
